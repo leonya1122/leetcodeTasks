@@ -71,3 +71,34 @@ var romanToInt = function(s)
     return result;
 };
 console.log("🚀 ~ file: leetcodeTasks.js:74 ~ romanToInt(s):", romanToInt(s))*/
+
+
+//14. Longest Common Prefix
+/*strs = ["flower","flow","flight"]
+var longestCommonPrefix = function(strs) 
+{
+    let pref = "";
+    let first = strs[0];
+
+    for (let x=0; x<first.length; x++)
+    {
+        let letter = first[x];
+
+        for (let i=1;i<strs.length;i++)
+        {
+
+            if (!(strs[i][x]==letter))
+            {
+                return pref;
+            }
+        }
+        pref+=letter;
+    }
+    return pref;
+    
+}
+
+console.log("🚀 ~ file: leetcodeTasks.js:86 ~ longestCommonPrefix(strs):", longestCommonPrefix(strs));*/
+
+
+
