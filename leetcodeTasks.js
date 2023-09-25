@@ -101,4 +101,44 @@ var longestCommonPrefix = function(strs)
 console.log("🚀 ~ file: leetcodeTasks.js:86 ~ longestCommonPrefix(strs):", longestCommonPrefix(strs));*/
 
 
+//20. Valid Parentheses
 
+/*let s = "{}"
+
+var isValid = function(s) 
+{
+    obj = {
+        "{":"f",
+        "[":"s",
+        "(":"r",
+        "}":"f",
+        "]":"s",
+        ")":"r"
+    }
+
+    let consist = [];
+    for (let i of s)
+    {
+        if ((i!=")")&(i!="]")&(i!="}"))
+        {
+            
+            consist.push(obj[i]);
+        }
+        else
+        {
+            if(obj[i]!=consist[consist.length-1])
+            {
+                return false;
+            }
+            else
+            {
+                consist.pop();
+            }
+        }
+    }
+    return consist.length?false:true;
+    
+
+};
+
+console.log("result",isValid(s));*/
