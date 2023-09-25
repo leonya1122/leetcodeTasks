@@ -39,7 +39,35 @@ var isPalindrome = function(x)
 console.log(isPalindrome(x));
 */
 
+
+
 //13.Roman to int
-var romanToInt = function(s) {
-    
+/*let s = "LVIII"
+
+var romanToInt = function(s) 
+{
+    objRom =
+    {
+        I       :     1,
+        V       :     5,
+        X       :     10,
+        L       :     50,
+        C       :     100,
+        D       :     500,
+        M       :     1000
+    }
+    let result=0;
+    for (let i=0; i<s.length; i++)
+    {
+        if (objRom[s[i]]<objRom[s[i+1]])
+        {
+            result-=objRom[s[i]];
+        }
+        else
+        {
+            result+=objRom[s[i]];
+        }
+    }
+    return result;
 };
+console.log("🚀 ~ file: leetcodeTasks.js:74 ~ romanToInt(s):", romanToInt(s))*/
