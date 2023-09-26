@@ -234,7 +234,7 @@ console.log(nums);*/
 
 //27. Remove Element
 
-let nums = [1,1,2,2,3,5,7,7,7,8,9,9,9,9,0];
+/*let nums = [1,1,2,2,3,5,7,7,7,8,9,9,9,9,0];
 let val = 7;
 
 var removeElement = function(nums, val) 
@@ -254,4 +254,20 @@ var removeElement = function(nums, val)
 };
 
 console.log('k --->', removeElement(nums,val));
-console.log("nums ---->", nums);
+console.log("nums ---->", nums);*/
+
+
+
+//28. Find the Index of the First Occurrence in a String
+
+
+let haystack ="leetcode";
+let needle = "etc";
+
+
+var strStr = function(haystack, needle) {
+    return haystack.indexOf(needle);
+  };
+
+
+console.log(strStr(haystack,needle));
