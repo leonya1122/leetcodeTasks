@@ -261,7 +261,7 @@ console.log("nums ---->", nums);*/
 //28. Find the Index of the First Occurrence in a String
 
 
-let haystack ="leetcode";
+/*let haystack ="leetcode";
 let needle = "etc";
 
 
@@ -270,4 +270,28 @@ var strStr = function(haystack, needle) {
   };
 
 
-console.log(strStr(haystack,needle));
+console.log(strStr(haystack,needle));*/
+
+
+//35. Search Insert Position
+
+let nums = [1,3,5,6];
+let target = 7;
+var searchInsert = function(nums, target) 
+{
+    let i;
+    for(i=0; i<nums.length;i++)
+    {
+        if(nums[i] == target)
+        {
+            return i;
+        }
+        else if (nums[i]>target)
+        {
+            return i;
+        }
+    }
+    return i;
+};
+
+console.log(searchInsert(nums,target));
