@@ -142,3 +142,78 @@ var isValid = function(s)
 };
 
 console.log("result",isValid(s));*/
+
+
+//21. Merge Two Sorted Lists
+
+
+/*function ListNode(val, next) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+}
+
+
+list1 = new ListNode(1,new ListNode(3,new ListNode(5,new ListNode(6,new ListNode(7)))));
+list2 = new ListNode(2,new ListNode(4));
+
+//console.log(list1.next.val);
+//console.log(list2);
+
+var mergeTwoLists = function(list1, list2) 
+{   
+    
+    resultList = new ListNode;
+    let headOfResultList = resultList;
+
+    while(true)
+    {
+        //console.log("begin   ",resultList)
+        if ((list1==null)&&(list2==null))
+        {
+            //console.log("1end   ",headOfResultList)
+            return headOfResultList.next;
+        }
+        else if(list1==null)
+        {
+            resultList.next = list2;
+            //console.log("2end   ",headOfResultList)
+            return headOfResultList.next;
+        }
+        else if(list2==null)
+        {
+            resultList.next = list1;
+            //console.log("3end   ",headOfResultList)
+            return headOfResultList.next;
+        }
+        else if(list1.val<list2.val)
+        {
+            resultList.next = list1;
+            list1 = list1.next;
+            resultList = resultList.next;
+        }
+        else
+        {
+            resultList.next = list2;
+            list2 = list2.next;
+            resultList = resultList.next;
+        }
+       
+
+
+    }
+    
+};
+
+mergeTwoLists(list1,list2);*/
+
+
+
+//26. Remove Duplicates from Sorted Array
+
+var removeDuplicates = function(nums) 
+{
+
+};
+
+removeDuplicates();
