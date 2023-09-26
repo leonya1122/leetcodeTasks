@@ -210,10 +210,23 @@ mergeTwoLists(list1,list2);*/
 
 
 //26. Remove Duplicates from Sorted Array
-
+let nums = [1,1,2,2,3,5,7,7,7,8,9,9,9,9,0];
 var removeDuplicates = function(nums) 
 {
+    let resultArray = [nums[0]];
+    let k = 1;
+    for (let i = 1;i<nums.length;i++)
+    {
+        if (nums[i] != nums[i-1])
+        {
+            nums[k]= nums[i];
+            k++;
+        }
+      
+    }
+    return k; 
 
 };
 
-removeDuplicates();
+console.log(removeDuplicates(nums));
+console.log(nums);
