@@ -275,7 +275,7 @@ console.log(strStr(haystack,needle));*/
 
 //35. Search Insert Position
 
-let nums = [1,3,5,6];
+/*let nums = [1,3,5,6];
 let target = 7;
 var searchInsert = function(nums, target) 
 {
@@ -294,4 +294,37 @@ var searchInsert = function(nums, target)
     return i;
 };
 
-console.log(searchInsert(nums,target));
+console.log(searchInsert(nums,target));*/
+
+
+//58. Length of Last Word
+
+ 
+/*let s = "  a safdsaf safdsaf  fds   ";
+var lengthOfLastWord = function(s) 
+{
+    /*let counter =0;
+    let spaceNum = 0;
+    for (let i=s.length-1; i>=0; i--)
+    {
+        
+        if(s[i]!=" " && counter == 0)
+        {
+            spaceNum = s.length-i-1;
+            counter++;
+        }
+        console.log(spaceNum," ",i," ")
+        if (s[i] == " " && counter!=0)
+        {
+            return (s.length-i-1-spaceNum);
+        }
+    }
+    return s.length-spaceNum;
+
+
+
+    //return s.split(" ").filter(x=>x!='').slice(-1)[0].length; более компактное решение
+    
+};
+
+console.log(lengthOfLastWord(s));*/
