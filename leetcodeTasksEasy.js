@@ -417,3 +417,41 @@ var mySqrt = function(x) {
 };
 
 console.log(mySqrt(x));*/
+
+
+//70. Climbing Stairs
+
+let n =5;
+
+let factorial = (x)=>
+{ 
+    let fact = 1;
+    for (let i = 1; i<=x; i++)
+    {
+        fact = fact * i;
+    }
+    return fact;
+}
+
+var climbStairs = function(n) 
+{
+    let kol2 = Math.floor(n/2);
+    let summ = 0;
+    let slag = 2;
+
+    for (let i = 1; i<kol2; i++)
+    {
+        let promSumm = 1;
+        for(let j =0; j<=i; j++)
+        {
+            promSumm = promSumm * (n - slag -j);
+        }
+        summ = summ + (promSumm/(factorial(i+1)));
+        slag ++;
+    }
+    summ = summ + n;
+    return summ;
+};
+
+
+console.log(climbStairs(n));
