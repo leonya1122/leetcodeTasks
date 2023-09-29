@@ -355,7 +355,7 @@ var plusOne = function(digits)
 console.log(plusOne(digits));*/
 
 //67. Add Binary
-let a = '11';
+/*let a = '11';
 let b = '1';
 
 var addBinary = function(a, b) 
@@ -396,7 +396,7 @@ var addBinary = function(a, b)
         result = s.toString() + result; 
         um = 0;    
     }
-    
+
     if (um == 1)
     {
         result ="1" + result;
@@ -406,4 +406,14 @@ var addBinary = function(a, b)
 };
 
 
-console.log(addBinary(a,b));
+console.log(addBinary(a,b));*/
+
+//69. Sqrt(x)
+
+/*let x = 63;
+
+var mySqrt = function(x) {
+    return Math.floor(Math.sqrt(x));
+};
+
+console.log(mySqrt(x));*/
