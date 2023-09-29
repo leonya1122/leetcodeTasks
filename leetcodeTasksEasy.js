@@ -329,7 +329,7 @@ console.log(lengthOfLastWord(s));*/
 
 //66. Plus One
 
-let digits  = [1,2,3];
+/*let digits  = [1,2,3];
 let digits1 = [9,9,9];
 
 var plusOne = function(digits) 
@@ -352,4 +352,58 @@ var plusOne = function(digits)
 };
 
 
-console.log(plusOne(digits));
+console.log(plusOne(digits));*/
+
+//67. Add Binary
+let a = '11';
+let b = '1';
+
+var addBinary = function(a, b) 
+{
+    
+    let big = ((a.length>=b.length) ? a : b);
+    let small = ((a.length>=b.length) ? b : a);
+    let result = "";
+    let um = 0;
+
+    for (let i = big.length-1, j = small.length-1; i>=0; i--, j--)
+    {
+        if (j>=0)
+        {
+            smallVal = Number(small[j]);
+        }
+        else
+        {
+            smallVal = 0;
+        }
+
+        let s = Number(big[i])+ smallVal + um;
+
+        if (s==3)
+        {
+            result = "1" + result;
+            um = 1;
+            continue;
+        }
+        else if (s==2)
+        {
+            result = "0" + result;
+            um = 1;
+            continue;
+        }
+        
+
+        result = s.toString() + result; 
+        um = 0;    
+    }
+    
+    if (um == 1)
+    {
+        result ="1" + result;
+    }
+    
+    return result;
+};
+
+
+console.log(addBinary(a,b));
