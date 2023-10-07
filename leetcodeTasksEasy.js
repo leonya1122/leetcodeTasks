@@ -505,3 +505,36 @@ var deleteDuplicates = function(head)
 }
 
 console.log(deleteDuplicates(head))*/
+
+
+//88. Merge Sorted Array
+
+let nums1 = [1,2,3,0,0,0];
+let nums2 = [2,5,6];
+let m = 3, n =3;
+
+var merge = function(nums1, m, nums2, n) 
+{
+    let c1=0 ,c2 = 0;
+    let m1 = m;
+    for (let i = 0; i < m+n; i++)
+    {
+
+        if ((nums1[c1] <= nums2[c2] && c1 < m1) || nums2[c2]==undefined)
+        {
+            c1++;
+        }
+        else
+        {
+            nums1.splice(i,0,nums2[c2])
+            c2++;
+            c1++;
+            m1++;
+        }
+
+    }
+    nums1.splice(n+m,201)
+}
+
+merge(nums1, m, nums2, n);
+console.log(nums1);
