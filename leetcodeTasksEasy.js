@@ -421,7 +421,7 @@ console.log(mySqrt(x));*/
 
 //70. Climbing Stairs
 
-let n =5;
+/*let n =5;
 
 let factorial = (x)=>
 { 
@@ -454,4 +454,54 @@ var climbStairs = function(n)
 };
 
 
-console.log(climbStairs(n));
+console.log(climbStairs(n));*/
+
+
+//83. Remove Duplicates from Sorted List
+
+
+/*function ListNode(val, next) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+}
+
+
+head = new ListNode(1,new ListNode(1,new ListNode(3,new ListNode(3))));
+
+var deleteDuplicates = function(head) 
+{
+    if (head.val == undefined)
+    {
+        return head;
+    }
+    resultList = new ListNode;
+    
+
+    let prevVal = head.val;
+    resultList = head;
+    let headOfResultList = resultList;
+    head = head.next;
+
+    while (head != undefined )
+    {
+        console.log(head.val);
+        console.log(prevVal);
+
+        if(head.val != prevVal)
+        {
+            resultList.next = head;
+            console.log("!!");
+            
+            resultList = resultList.next;
+        }
+
+        prevVal = head.val;
+        head = head.next;
+
+    }
+    resultList.next = null;
+    return headOfResultList;
+}
+
+console.log(deleteDuplicates(head))*/
