@@ -509,7 +509,7 @@ console.log(deleteDuplicates(head))*/
 
 //88. Merge Sorted Array
 
-let nums1 = [1,2,3,0,0,0];
+/*let nums1 = [1,2,3,0,0,0];
 let nums2 = [2,5,6];
 let m = 3, n =3;
 
@@ -537,4 +537,43 @@ var merge = function(nums1, m, nums2, n)
 }
 
 merge(nums1, m, nums2, n);
-console.log(nums1);
+console.log(nums1);*/
+
+
+
+//94. Binary Tree Inorder Traversal
+
+function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+
+let root = new TreeNode(1,new TreeNode(4, null, new TreeNode(5,null,null)), new TreeNode(2,new TreeNode(3,null,null), null));
+//let root = new TreeNode(1,null,null);
+
+let inorderRec = (node) => {
+    if (node == null)
+    {
+        return;
+    }
+    inorderRec(node.left);
+    r.push(node.val);
+    inorderRec(node.right);
+    return r;
+}
+
+let r = [];
+var inorderTraversal = function(root)
+{
+    r = [];
+    if (root == null)
+    {
+        return [];
+    }
+   return inorderRec(root); 
+}
+
+
+console.log(inorderTraversal(root));
