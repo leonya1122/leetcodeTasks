@@ -580,7 +580,58 @@ console.log(inorderTraversal(root));*/
 
 
 //100. Same tree
-
+/*
 var isSameTree = function(p, q) {
     return JSON.stringify(p) === JSON.stringify(q)
 };
+
+*/
+
+
+
+//101. Symmetric Tree
+
+function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+
+let root = new TreeNode(1,new TreeNode(2, new TreeNode(2,null,null),null), new TreeNode(2,new TreeNode(2,null,null),null));
+
+
+let inorderRecLeft = (node) => {
+    if (node == null)
+    {
+        return;
+    }
+    inorderRecLeft(node.left);
+    resL.push(node.val);
+    inorderRecLeft(node.right);
+    resL.push(null)
+}
+
+let inorderRecRight = (node) => {
+    if (node == null)
+    {
+        return;
+    }
+    inorderRecRight(node.right);
+    resR.push(node.val);
+    inorderRecRight(node.left);
+    resR.push(null)
+    
+}
+
+
+var isSymmetric = function(root) 
+{
+    resR = [];
+    resL = [];
+    inorderRecLeft(root.left);
+    inorderRecRight(root.right);
+    return (resL.toString() == resR.toString());
+}
+
+console.log(isSymmetric(root));
