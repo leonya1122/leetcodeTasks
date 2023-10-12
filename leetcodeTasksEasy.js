@@ -543,7 +543,7 @@ console.log(nums1);*/
 
 //94. Binary Tree Inorder Traversal
 
-function TreeNode(val, left, right) 
+/*function TreeNode(val, left, right) 
 {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
@@ -576,4 +576,11 @@ var inorderTraversal = function(root)
 }
 
 
-console.log(inorderTraversal(root));
+console.log(inorderTraversal(root));*/
+
+
+//100. Same tree
+
+var isSameTree = function(p, q) {
+    return JSON.stringify(p) === JSON.stringify(q)
+};
