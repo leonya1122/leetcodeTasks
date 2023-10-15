@@ -591,7 +591,7 @@ var isSameTree = function(p, q) {
 
 //101. Symmetric Tree
 
-function TreeNode(val, left, right) 
+/*function TreeNode(val, left, right) 
 {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
@@ -634,4 +634,58 @@ var isSymmetric = function(root)
     return (resL.toString() == resR.toString());
 }
 
-console.log(isSymmetric(root));
+console.log(isSymmetric(root));*/
+
+ 
+//104. Maximum Depth of Binary Tree
+
+/*function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+
+//let root = new TreeNode(1,new TreeNode(4, null, new TreeNode(5,null,null)), new TreeNode(2,new TreeNode(3,null,null), null));
+//let root = new TreeNode (0,null,null);
+let root = new TreeNode(1,new TreeNode(2, null, null),null);
+
+let inorderRec = (node) => 
+{
+    
+    if (node == null)
+    {
+        return 0;
+    }
+
+    let lDepth = inorderRec(node.left);
+    let rDepth = inorderRec(node.right);
+
+    if (lDepth > rDepth)
+        {
+            return (lDepth + 1);
+        }
+    else
+        {
+            return (rDepth + 1);
+        }        
+}
+
+ 
+var maxDepth = function(root) 
+{
+    depth = 1;
+    max_depth = 0;
+    if (root == null)
+    {
+        return 0;
+    }
+    if (root.left == null && root.right == null)
+    {
+        return 1;
+    }
+   return inorderRec(root); 
+}
+
+
+console.log("maxDepth = " , maxDepth(root))*/
