@@ -689,3 +689,36 @@ var maxDepth = function(root)
 
 
 console.log("maxDepth = " , maxDepth(root))*/
+
+//108. Convert Sorted Array to Binary Search Tree
+
+function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+let nums = [-10,-3,0,5,9]
+
+let makeTree = (nums, beg,end) =>
+{
+    if (beg > end)
+    {
+        return null;
+    }
+
+    let midC = Math.floor((end+beg)/2);
+    let node = new TreeNode(nums[midC]);
+    node.left  = makeTree(nums, beg, midC-1);
+    node.right = makeTree(nums, midC+1, end);
+
+    return node;
+
+}
+
+var sortedArrayToBST = function(nums) 
+{
+    return makeTree(nums, 0, nums.length-1);
+}
+
+/*console.log(*/sortedArrayToBST(nums)//);
