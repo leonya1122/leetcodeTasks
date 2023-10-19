@@ -692,7 +692,7 @@ console.log("maxDepth = " , maxDepth(root))*/
 
 //108. Convert Sorted Array to Binary Search Tree
 
-function TreeNode(val, left, right) 
+/*function TreeNode(val, left, right) 
 {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
@@ -700,7 +700,7 @@ function TreeNode(val, left, right)
 }
 let nums = [-10,-3,0,5,9]
 
-let makeTree = (nums, beg,end) =>
+let makeTree = (nums, beg, end) =>
 {
     if (beg > end)
     {
@@ -721,4 +721,59 @@ var sortedArrayToBST = function(nums)
     return makeTree(nums, 0, nums.length-1);
 }
 
-/*console.log(*/sortedArrayToBST(nums)//);
+console.log(sortedArrayToBST(nums));*/
+
+//110. Balanced Binary Tree
+
+/*function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+let root = new TreeNode(1,new TreeNode(4, null, new TreeNode(5,null,new TreeNode(2,new TreeNode(3,null,null)))), null);
+
+let sost = true;
+let inorderRec = (node) => 
+{
+    if (sost == false)
+    {
+        return false;
+    }
+
+    if (node == null)
+    {
+        return 0;
+    }
+
+    let lDe = inorderRec(node.left);
+    let rDe = inorderRec(node.right);
+
+    if (Math.abs(lDe-rDe)>1)
+    {
+        sost = false;
+        return;
+    }
+
+    if (lDe > rDe)
+    {
+        return (lDe + 1);
+    }
+    else
+    {
+        return (rDe + 1);
+    } 
+}
+
+var isBalanced = function(root) 
+{
+    sost = true;
+    inorderRec(root);
+    if (sost == false)
+    {
+        return false;
+    }
+    return true;
+}
+
+console.log(isBalanced(root));*/
