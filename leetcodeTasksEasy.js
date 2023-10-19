@@ -540,7 +540,6 @@ merge(nums1, m, nums2, n);
 console.log(nums1);*/
 
 
-
 //94. Binary Tree Inorder Traversal
 
 /*function TreeNode(val, left, right) 
@@ -777,3 +776,49 @@ var isBalanced = function(root)
 }
 
 console.log(isBalanced(root));*/
+
+
+//111. Minimum Depth of Binary Tree
+
+function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+
+let root = new TreeNode(1,new TreeNode(4, null, new TreeNode(5,null,null)), new TreeNode(2,new TreeNode(3,null,null), null));
+
+
+let findDepthOfNodes = (node) =>
+{
+    if(node == null)
+    {
+        return 0;
+    }
+    currentDepth++;
+    let s1 = findDepthOfNodes(node.left);
+    let s2 = findDepthOfNodes(node.right);
+    if(s1==0 && s2 == 0)
+    {
+        resultArray.push(currentDepth);
+    }
+    currentDepth--;
+    return 1;
+    
+}
+const min = (values) => values.reduce((x, y) => Math.min(x, y));
+var minDepth = function(root) 
+{
+    if (root == null)
+    {
+        return 0;
+    }
+    resultArray = [];
+    currentDepth = 0;
+    findDepthOfNodes(root);
+    return min(resultArray);
+    
+}
+
+console.log(minDepth(root));
