@@ -825,7 +825,7 @@ console.log(minDepth(root));*/
 
 //112. Path Sum
 
-function TreeNode(val, left, right) 
+/*function TreeNode(val, left, right) 
 {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
@@ -879,4 +879,27 @@ var hasPathSum = function(root, targetSum)
     return yesFind;
 }
 
-console.log(hasPathSum(root,targetSum));
+console.log(hasPathSum(root,targetSum));*/
+
+
+//118. Pascal's Triangle
+
+let numRows = 3;
+
+var generate = function(numRows) 
+{
+    let result = [[1]];
+    for (let i=1;  i<numRows; i++)
+    {
+        result.push([1]);
+        for(let j = 0;  j < i-1; j++)
+        {
+            result[i].push(result[i-1][j]+result[i-1][j+1])
+        }
+        result[i].push(1);
+    }
+
+    return result;
+}
+
+console.log(generate(numRows));
