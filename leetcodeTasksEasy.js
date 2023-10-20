@@ -780,7 +780,7 @@ console.log(isBalanced(root));*/
 
 //111. Minimum Depth of Binary Tree
 
-function TreeNode(val, left, right) 
+/*function TreeNode(val, left, right) 
 {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
@@ -821,4 +821,62 @@ var minDepth = function(root)
     
 }
 
-console.log(minDepth(root));
+console.log(minDepth(root));*/
+
+//112. Path Sum
+
+function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+
+let targetSum = 5;
+let root = new TreeNode(1,new TreeNode(4, null, new TreeNode(5,null,null)), new TreeNode(2,new TreeNode(3,null,null), null));
+
+let currentSum;
+let yesFind;
+
+let calcSumOfTree = (node,target) =>
+{
+    if(yesFind == true)
+    {
+        return;
+    }
+
+    if(node == null)
+    {
+        return true;
+    }
+
+    currentSum += node.val;
+
+    let leaf =0;
+    calcSumOfTree(node.left,target)?leaf++:true;
+    calcSumOfTree(node.right,target)?leaf++:true;
+
+    if (currentSum == target && leaf == 2)
+    {
+        yesFind = true;
+    }
+
+    currentSum -= node.val;
+    return;
+}
+
+var hasPathSum = function(root, targetSum) 
+{
+    yesFind = false;
+    currentSum = 0;
+    if(root == null)
+    {
+        return false;
+    }
+
+    calcSumOfTree(root,targetSum);
+
+    return yesFind;
+}
+
+console.log(hasPathSum(root,targetSum));
