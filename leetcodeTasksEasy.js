@@ -906,7 +906,7 @@ console.log(generate(numRows));*/
 
 //119. Pascal's Triangle II
 
-let rowIndex = 3;
+/*let rowIndex = 3;
 
 var getRow = function(rowIndex) 
 {
@@ -922,4 +922,29 @@ var getRow = function(rowIndex)
     }
     return result[rowIndex];
 }
-console.log(getRow(rowIndex));
+console.log(getRow(rowIndex));*/
+
+//121. Best Time to Buy and Sell Stock
+/*let prices = [7,1,5,3,6,4];
+
+var maxProfit = function(prices) 
+{
+    let profit =0;
+    let min = prices[0];
+
+    for(let i = 0; i < prices.length; i++)
+    {
+        if (prices[i]<min)
+        {
+            min = prices[i];
+        }
+        if(prices[i] - min > profit)
+        {
+            profit = prices[i] - min;
+        }
+    }
+    return profit;
+}
+
+console.log(maxProfit(prices));*/
+
