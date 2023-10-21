@@ -948,3 +948,23 @@ var maxProfit = function(prices)
 
 console.log(maxProfit(prices));*/
 
+//125. Valid Palindrome
+
+let s = "s,,aDd:a s";
+
+var isPalindrome = function(s) 
+{
+    let p = /[^a-zA-Z0-9]+/g
+
+    s = (s.replace (p, ''))
+
+    for(let i=0,j = s.length-1; i<j; i++,j--)
+    {
+        if(s[i].toLowerCase()!=s[j].toLowerCase())
+        {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(isPalindrome(s));
