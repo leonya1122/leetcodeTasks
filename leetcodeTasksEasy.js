@@ -950,7 +950,7 @@ console.log(maxProfit(prices));*/
 
 //125. Valid Palindrome
 
-let s = "s,,aDd:a s";
+/*let s = "s,,aDd:a s";
 
 var isPalindrome = function(s) 
 {
@@ -967,4 +967,33 @@ var isPalindrome = function(s)
     }
     return true;
 }
-console.log(isPalindrome(s));
+console.log(isPalindrome(s));*/
+
+//136. Single Number
+
+let nums = [1,2,3,1,2];
+
+var singleNumber = function(nums) 
+{
+    let s = new Set();
+
+    for(let i = 0; i<nums.length;i++)
+    {
+        if(s.has(nums[i]))
+        {
+            s.delete(nums[i]);
+        }
+        else
+        {
+            s.add(nums[i])
+        }
+    }
+
+    for(let i of s)
+    {
+        return i
+    }
+
+}
+
+console.log(singleNumber(nums));
