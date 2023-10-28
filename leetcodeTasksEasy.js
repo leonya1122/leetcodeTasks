@@ -257,7 +257,6 @@ console.log('k --->', removeElement(nums,val));
 console.log("nums ---->", nums);*/
 
 
-
 //28. Find the Index of the First Occurrence in a String
 
 
@@ -298,7 +297,6 @@ console.log(searchInsert(nums,target));*/
 
 
 //58. Length of Last Word
-
  
 /*let s = "  a safdsaf safdsaf  fds   ";
 var lengthOfLastWord = function(s) 
@@ -324,7 +322,6 @@ var lengthOfLastWord = function(s)
 };
 
 console.log(lengthOfLastWord(s));*/
-
 
 
 //66. Plus One
@@ -353,6 +350,8 @@ var plusOne = function(digits)
 
 
 console.log(plusOne(digits));*/
+
+
 
 //67. Add Binary
 /*let a = '11';
@@ -407,6 +406,7 @@ var addBinary = function(a, b)
 
 
 console.log(addBinary(a,b));*/
+
 
 //69. Sqrt(x)
 
@@ -585,7 +585,6 @@ var isSameTree = function(p, q) {
 };
 
 */
-
 
 
 //101. Symmetric Tree
@@ -969,9 +968,10 @@ var isPalindrome = function(s)
 }
 console.log(isPalindrome(s));*/
 
+
 //136. Single Number
 
-let nums = [1,2,3,1,2];
+/*let nums = [1,2,3,1,2];
 
 var singleNumber = function(nums) 
 {
@@ -996,4 +996,47 @@ var singleNumber = function(nums)
 
 }
 
-console.log(singleNumber(nums));
+console.log(singleNumber(nums));*/
+
+//141. Linked List Cycle
+
+/*function ListNode(val, next) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+}
+
+
+head = new ListNode(1,new ListNode(1,new ListNode(3,new ListNode(3))));
+head.next = head;
+
+/*var hasCycle = function(head) //тупо, но эффективно
+{
+    let count =0;
+    while(head != undefined)
+    {
+        count ++;
+        if (count > 100000)
+        {
+            return true;
+        }
+        head = head.next;
+    }
+    return false;
+};*/
+/*var hasCycle = function(head)  //заяц и черепаха
+{
+    let slow = head;
+    let fast = head;
+    while (fast != undefined && fast.next != undefined)
+    {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (fast == slow)
+        {
+            return true;
+        }
+    }
+    return false;
+}*/
+
