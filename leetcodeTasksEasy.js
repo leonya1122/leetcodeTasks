@@ -1073,7 +1073,7 @@ console.log(preorderTraversal(root));*/
 
 //145. Binary Tree Postorder Traversal
 
-function TreeNode(val, left, right) 
+/*function TreeNode(val, left, right) 
 {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
@@ -1103,4 +1103,47 @@ var postorderTraversal = function(root)
     return result;
 }
 
-console.log(postorderTraversal(root));
+console.log(postorderTraversal(root));*/
+
+//160. Intersection of Two Linked Lists
+
+function ListNode(val, next) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+}
+
+
+headA = new ListNode(1,new ListNode(1,new ListNode(3,new ListNode(3))));
+headB = new ListNode(2,headA);
+
+var getIntersectionNode = function(headA, headB) //самое простое
+{
+    while (headA != undefined)
+    {
+        let temp = headB;
+        while (temp != undefined)
+        {
+            if (temp == headA)
+            {
+                return headA;
+            }
+            temp = temp.next;
+        }
+        headA = headA.next;
+    }
+    return null;
+}
+
+var getIntersectionNode = function(headA, headB) //более эффективное (посмотрел)
+{
+    let tempA = headA;
+    let tempB = headB
+    while (tempA !== tempB) {
+        tempA = tempA ? tempA.next : headB 
+        tempB = tempB ? tempB.next : headA 
+    }
+    return tempA
+};
+
+console.log(getIntersectionNode(headA,headB));
