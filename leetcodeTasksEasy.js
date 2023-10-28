@@ -1042,7 +1042,7 @@ head.next = head;
 
 //144. Binary Tree Preorder Traversal
 
-function TreeNode(val, left, right) 
+/*function TreeNode(val, left, right) 
 {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
@@ -1069,4 +1069,38 @@ var preorderTraversal = function(root)
     return result;
 }
 
-console.log(preorderTraversal(root));
+console.log(preorderTraversal(root));*/
+
+//145. Binary Tree Postorder Traversal
+
+function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+
+let root = new TreeNode(1,new TreeNode(4, null, new TreeNode(5,null,new TreeNode(2,new TreeNode(3,null,null)))), null);
+let result;
+
+let postorder = (node) =>
+{
+    if (node == null)
+    {
+        return;
+    }
+    
+    postorder(node.left);
+    postorder(node.right);
+    result.push(node.val);
+}
+
+var postorderTraversal = function(root) 
+{
+    result = [];
+    postorder(root);
+
+    return result;
+}
+
+console.log(postorderTraversal(root));
