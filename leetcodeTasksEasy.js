@@ -1040,3 +1040,33 @@ head.next = head;
     return false;
 }*/
 
+//144. Binary Tree Preorder Traversal
+
+function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+
+let root = new TreeNode(1,new TreeNode(4, null, new TreeNode(5,null,new TreeNode(2,new TreeNode(3,null,null)))), null);
+let result;
+let preorder = (node) =>
+{
+    if (node == null)
+    {
+        return;
+    }
+    result.push(node.val);
+    preorder(node.left);
+    preorder(node.right);
+}
+var preorderTraversal = function(root) 
+{
+
+    result = [];
+    preorder(root);
+    return result;
+}
+
+console.log(preorderTraversal(root));
