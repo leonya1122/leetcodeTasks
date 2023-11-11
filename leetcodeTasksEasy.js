@@ -1171,7 +1171,7 @@ console.log(convertToTitle(columnNumber));*/
 
 //169. Majority Element
 
-let nums = [1,4,7,4,3,8,5,2];
+/*let nums = [1,4,7,4,3,8,5,2];
 
 var majorityElement = function(nums) 
 {
@@ -1198,4 +1198,22 @@ var majorityElement = function(nums)
     return maj;
 }   
 
-console.log(majorityElement(nums));
+console.log(majorityElement(nums));*/
+
+//171. Excel Sheet Column Number
+let columnTitle = 'AAA';
+
+var titleToNumber = function(columnTitle) 
+{
+    let result = 0;
+
+    for(let i =0; i<columnTitle.length; i++)
+    {
+        result = result*26 + (columnTitle.charCodeAt(i)-64);
+        console.log(result);
+    }
+    
+    return result;
+};
+
+console.log(titleToNumber(columnTitle));
