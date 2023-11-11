@@ -1151,7 +1151,7 @@ console.log(getIntersectionNode(headA,headB));*/
 
 //168. Excel Sheet Column Title
 
-let columnNumber = 703;
+/*let columnNumber = 703;
 var convertToTitle = function(columnNumber) 
 {
     let result = new String;
@@ -1167,4 +1167,35 @@ var convertToTitle = function(columnNumber)
     return result;
 }
 
-console.log(convertToTitle(columnNumber));
+console.log(convertToTitle(columnNumber));*/
+
+//169. Majority Element
+
+let nums = [1,4,7,4,3,8,5,2];
+
+var majorityElement = function(nums) 
+{
+    let h = new Map;
+    nums.forEach(element => {
+        if(h.get(element)==undefined)
+        {
+            h.set(element,0);
+        }
+        else
+        {
+            h.set(element,h.get(element)+1)
+        } 
+    });
+    let indmaj = -1;
+    let maj = 0;
+    h.forEach((value,key)=>{
+        if (value>indmaj)
+        {
+            indmaj = value;
+            maj = key;
+        }
+    });
+    return maj;
+}   
+
+console.log(majorityElement(nums));
