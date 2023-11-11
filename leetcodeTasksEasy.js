@@ -1107,7 +1107,7 @@ console.log(postorderTraversal(root));*/
 
 //160. Intersection of Two Linked Lists
 
-function ListNode(val, next) 
+/*function ListNode(val, next) 
 {
     this.val = (val===undefined ? 0 : val)
     this.next = (next===undefined ? null : next)
@@ -1146,4 +1146,25 @@ var getIntersectionNode = function(headA, headB) //более эффективн
     return tempA
 };
 
-console.log(getIntersectionNode(headA,headB));
+console.log(getIntersectionNode(headA,headB));*/
+
+
+//168. Excel Sheet Column Title
+
+let columnNumber = 703;
+var convertToTitle = function(columnNumber) 
+{
+    let result = new String;
+
+    while (columnNumber)
+    {
+        columnNumber--;
+        result = String.fromCharCode(65 + columnNumber%26) + result;
+        columnNumber = Math.floor(columnNumber/26);
+    }
+    
+
+    return result;
+}
+
+console.log(convertToTitle(columnNumber));
