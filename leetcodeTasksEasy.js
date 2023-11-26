@@ -1222,7 +1222,7 @@ console.log(titleToNumber(columnTitle));*/
 
 //190. Reverse Bits
 
-let n = 0b00000010100101000001111010011100;
+/*let n = 0b00000010100101000001111010011100;
 
 var reverseBits = function(n) 
 {
@@ -1240,4 +1240,25 @@ var reverseBits = function(n)
 };
     
 
-console.log(reverseBits(n));
+console.log(reverseBits(n));*/
+
+//191. Number of 1 Bits
+
+let n = 0b101001;
+
+var hammingWeight = function(n) 
+{
+    let res = 0;
+    for (let i = 0; i<32; i++)
+    {
+        
+        if (n & 1)
+        {
+            res++;
+        }
+        n = n>>1;
+    }
+    return res;
+};
+
+console.log(hammingWeight(n));
