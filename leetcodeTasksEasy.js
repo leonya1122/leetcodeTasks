@@ -1244,7 +1244,7 @@ console.log(reverseBits(n));*/
 
 //191. Number of 1 Bits
 
-let n = 0b101001;
+/*let n = 0b101001;
 
 var hammingWeight = function(n) 
 {
@@ -1261,4 +1261,44 @@ var hammingWeight = function(n)
     return res;
 };
 
-console.log(hammingWeight(n));
+console.log(hammingWeight(n));*/
+
+//202. Happy Number
+
+let n = 50;
+
+function delay(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+ var isHappy = /*async*/ function(n) 
+{
+    let summ = 0;
+    let nums;
+    let set = new Set();
+
+    while(true)
+    {
+        nums = (""+n).split("").map(Number);
+        nums.forEach((element)=>{
+            summ += element*element;
+        });
+        if (summ == 1)
+        {
+            return true;
+        }
+        n = summ;
+
+        if(set.has(summ))
+        {
+            return false;
+        }
+        
+        set.add(summ);
+        //console.log(summ);
+        //await delay(1000);
+        summ=0;
+    }
+};
+
+console.log(isHappy(n));
