@@ -1265,13 +1265,13 @@ console.log(hammingWeight(n));*/
 
 //202. Happy Number
 
-let n = 50;
+/*let n = 50;
 
 function delay(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
     }
 
- var isHappy = /*async*/ function(n) 
+ var isHappy = async function(n) 
 {
     let summ = 0;
     let nums;
@@ -1301,4 +1301,54 @@ function delay(ms) {
     }
 };
 
-console.log(isHappy(n));
+console.log(isHappy(n));*/
+
+
+//203. Remove Linked List Elements
+
+ function ListNode(val, next) {
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+}
+
+let head = new ListNode(1,new ListNode(2,new ListNode(2,new ListNode(1))));
+let val = 2;
+
+var removeElements = function(head, val) {
+
+    if (head == undefined)          //если список пуст
+    {
+        return head;
+    }
+
+    while (head != undefined)       //если нужно убрать в начале
+    {                               
+        if(head.val == val)
+        {
+            head = head.next;
+        }
+        else{
+            break;
+        }
+    }
+
+    let prev = new ListNode();
+    let result = head;
+
+    while(head != undefined)
+    {
+        if (head.val == val)
+        {
+            prev.next = head.next;
+        }
+        else
+        {
+            prev = head;
+        }
+        head = prev.next;
+    }
+
+    return result;
+};
+
+console.log(removeElements(head, val));
