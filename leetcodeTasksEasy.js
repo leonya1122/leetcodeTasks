@@ -1228,14 +1228,16 @@ var reverseBits = function(n)
 {
     let result = 0;
     let currentBit;
-    for (let i = 0; i<32;i++ )
+    for (let i = 0; i<32; i++ )
     {
         currentBit = n & 1;
-        result = result | currentBit;
         result = result<<1;
+        result = result | currentBit;
         n = n>>1;
     }
-    return result.toString(2);
+    return result>>>0;
+    //return result.toString(2);
 };
+    
 
 console.log(reverseBits(n));
