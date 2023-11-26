@@ -1201,7 +1201,7 @@ var majorityElement = function(nums)
 console.log(majorityElement(nums));*/
 
 //171. Excel Sheet Column Number
-let columnTitle = 'AAA';
+/*let columnTitle = 'AAA';
 
 var titleToNumber = function(columnTitle) 
 {
@@ -1216,4 +1216,26 @@ var titleToNumber = function(columnTitle)
     return result;
 };
 
-console.log(titleToNumber(columnTitle));
+console.log(titleToNumber(columnTitle));*/
+
+
+
+//190. Reverse Bits
+
+let n = 0b00000010100101000001111010011100;
+
+var reverseBits = function(n) 
+{
+    let result = 0;
+    let currentBit;
+    for (let i = 0; i<32;i++ )
+    {
+        currentBit = n & 1;
+        result = result | currentBit;
+        result = result<<1;
+        n = n>>1;
+    }
+    return result.toString(2);
+};
+
+console.log(reverseBits(n));
