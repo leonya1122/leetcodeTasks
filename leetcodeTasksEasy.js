@@ -1386,7 +1386,7 @@ console.log(isIsomorphic(s,t));*/
 
 //206. Reverse Linked List
 
-function ListNode(val, next) {
+/*function ListNode(val, next) {
     this.val = (val===undefined ? 0 : val)
     this.next = (next===undefined ? null : next)
 }
@@ -1416,4 +1416,5 @@ var reverseList = function(head)
     return tempPrev;
 };
 
-console.log(reverseList(head));
+console.log(reverseList(head));*/
+
