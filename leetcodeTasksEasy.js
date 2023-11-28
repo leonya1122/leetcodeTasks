@@ -1355,7 +1355,7 @@ console.log(removeElements(head, val));*/
 
 //205. Isomorphic Strings
 
-let s = "paper";
+/*let s = "paper";
 let t = "title";
 
 var isIsomorphic = function(s, t) 
@@ -1382,4 +1382,38 @@ var isIsomorphic = function(s, t)
     return true;
 };
 
-console.log(isIsomorphic(s,t));
+console.log(isIsomorphic(s,t));*/
+
+//206. Reverse Linked List
+
+function ListNode(val, next) {
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+}
+
+let head = new ListNode(1,new ListNode(2,new ListNode(3,new ListNode(4))));
+
+var reverseList = function(head) 
+{
+    if (head == undefined)
+    {
+        return head;
+    }
+    let tempPrev = new ListNode();
+    Object.assign(tempPrev,head)
+    tempPrev.next = null;
+    let temp = new ListNode();
+    head = head.next;
+
+
+    while(head != undefined)
+    {
+        temp = head.next;
+        head.next = tempPrev;
+        tempPrev = head;
+        head = temp;
+    }
+    return tempPrev;
+};
+
+console.log(reverseList(head));
