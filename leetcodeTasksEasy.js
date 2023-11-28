@@ -1306,7 +1306,7 @@ console.log(isHappy(n));*/
 
 //203. Remove Linked List Elements
 
- function ListNode(val, next) {
+/*function ListNode(val, next) {
     this.val = (val===undefined ? 0 : val)
     this.next = (next===undefined ? null : next)
 }
@@ -1351,4 +1351,35 @@ var removeElements = function(head, val) {
     return result;
 };
 
-console.log(removeElements(head, val));
+console.log(removeElements(head, val));*/
+
+//205. Isomorphic Strings
+
+let s = "paper";
+let t = "title";
+
+var isIsomorphic = function(s, t) 
+{
+
+    if (s.length!=t.length)
+    {
+        return false;
+    }
+
+    let map1 = new Map();
+    let map2 = new Map();
+
+    for(let i = 0; i < s.length; i++)
+    {
+       
+        if (map1.get(s[i]) != map2.get(t[i]))
+        {
+            return false;
+        }
+        map1.set(s[i],i);
+        map2.set(t[i],i);
+    }
+    return true;
+};
+
+console.log(isIsomorphic(s,t));
