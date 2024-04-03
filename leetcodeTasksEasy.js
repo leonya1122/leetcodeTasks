@@ -1421,7 +1421,7 @@ console.log(reverseList(head));*/
 
 //217. Contains Duplicate
 
-var containsDuplicate = function(nums) 
+/*var containsDuplicate = function(nums) 
 {
     if (nums.length < 2)
     {
@@ -1443,4 +1443,34 @@ var containsDuplicate = function(nums)
     return false;
 };
 
-console.log(containsDuplicate([1,2,3,5,8])); 
+console.log(containsDuplicate([1,2,3,5,8])); */
+
+
+//219. Contains Duplicate II
+
+var containsNearbyDuplicate = function(nums, k) 
+{
+    if (nums.length < 2)
+    {
+        return false;
+    }
+
+    let s = new Map();
+
+    for (let i = 0; i < nums.length; i ++)
+    {
+        if (s.has(nums[i]))
+        {
+            console.log(i,s.get(nums[i]) )
+            if (Math.abs(s.get(nums[i]) - i) <= k)
+            {
+                return true;
+            }
+        }
+
+        s.set(nums[i],i);
+
+    }
+    return false;
+};
+console.log(containsNearbyDuplicate([1,2,3,5,8,3],1));
