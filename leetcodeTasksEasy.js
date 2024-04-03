@@ -1418,3 +1418,29 @@ var reverseList = function(head)
 
 console.log(reverseList(head));*/
 
+
+//217. Contains Duplicate
+
+var containsDuplicate = function(nums) 
+{
+    if (nums.length < 2)
+    {
+        return false;
+    }
+
+    let s = new Set();
+
+    for (let i = 0; i < nums.length; i ++)
+    {
+        if (s.has(nums[i]))
+        {
+            return true;
+        }
+
+        s.add(nums[i]);
+
+    }
+    return false;
+};
+
+console.log(containsDuplicate([1,2,3,5,8])); 
