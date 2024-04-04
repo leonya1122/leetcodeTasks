@@ -1448,7 +1448,7 @@ console.log(containsDuplicate([1,2,3,5,8])); */
 
 //219. Contains Duplicate II
 
-var containsNearbyDuplicate = function(nums, k) 
+/*var containsNearbyDuplicate = function(nums, k) 
 {
     if (nums.length < 2)
     {
@@ -1473,4 +1473,41 @@ var containsNearbyDuplicate = function(nums, k)
     }
     return false;
 };
-console.log(containsNearbyDuplicate([1,2,3,5,8,3],1));
+console.log(containsNearbyDuplicate([1,2,3,5,8,3],1));*/
+
+//222. Count Complete Tree Nodes
+
+function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+
+let root = new TreeNode(1,new TreeNode(4, null, new TreeNode(5,null,null)), new TreeNode(2,new TreeNode(3,null,null), null));
+let count = 0;
+
+let inorderRec = (node) => {
+    if (node == null)
+    {
+        return;
+    }
+    count++;
+    inorderRec(node.left);
+    inorderRec(node.right);
+    return count;
+}
+
+
+var countNodes = function(root) 
+{
+    count = 0;
+    if (root == null)
+    {
+        return 0;
+    }
+    return inorderRec(root)
+    
+};
+
+console.log(countNodes(root));
