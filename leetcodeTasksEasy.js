@@ -1477,7 +1477,7 @@ console.log(containsNearbyDuplicate([1,2,3,5,8,3],1));*/
 
 //222. Count Complete Tree Nodes
 
-function TreeNode(val, left, right) 
+/*function TreeNode(val, left, right) 
 {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
@@ -1510,4 +1510,47 @@ var countNodes = function(root)
     
 };
 
-console.log(countNodes(root));
+console.log(countNodes(root));*/
+
+
+//225. Implement Stack using Queues
+
+
+class MyStack
+{
+    constructor()
+    {
+        this.data = [];
+        this.index = -1;
+    }
+    push(value)
+    {
+        this.index ++;
+        this.data[this.index] = value;
+    }
+    pop()
+    {
+        this.index --;
+    }
+    top()
+    {
+        return this.data[this.index]
+    }
+    empty()
+    {
+        if (this.index == -1)
+        {
+            return true;
+        }
+        return false;
+    }
+}
+
+let stack = new MyStack();
+stack.push(5);
+stack.push(76)
+console.log(stack.top());
+stack.pop();
+console.log(stack.top());
+console.log(stack.empty())
+stack.pop()
