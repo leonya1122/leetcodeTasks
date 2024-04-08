@@ -1559,7 +1559,7 @@ stack.pop()*/
 
 //226. Invert Binary Tree
 
-function TreeNode(val, left, right) 
+/*function TreeNode(val, left, right) 
 {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
@@ -1596,4 +1596,33 @@ var invertTree = function(root)
    return inorderRec(root); 
 }
 
-console.log(invertTree(root));
+console.log(invertTree(root));*/
+
+//228. Summary Ranges
+
+
+nums = [0,1,2,4,6,7,8,98,99,101];
+//nums = [0,2,4,5,7];
+var summaryRanges = function(nums) 
+{
+    if (nums == [])
+    {
+        return [];
+    }
+
+    let result = [];
+    let begin = nums[0];
+
+    for (let i = 0; i<nums.length; i++)
+    {
+        if (nums[i] != nums[i+1]-1)
+        {
+            begin == nums[i] ? result.push(`${nums[i]}`) :result.push(`${begin}->${nums[i]}`);
+            begin = nums[i+1];
+        }
+    }
+
+    return result;
+};
+
+console.log(summaryRanges(nums));
