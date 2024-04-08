@@ -1516,7 +1516,7 @@ console.log(countNodes(root));*/
 //225. Implement Stack using Queues
 
 
-class MyStack
+/*class MyStack
 {
     constructor()
     {
@@ -1553,4 +1553,47 @@ console.log(stack.top());
 stack.pop();
 console.log(stack.top());
 console.log(stack.empty())
-stack.pop()
+stack.pop()*/
+
+
+
+//226. Invert Binary Tree
+
+function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+
+let root = new TreeNode(1,new TreeNode(4, null, new TreeNode(5,null,null)), new TreeNode(2,new TreeNode(3,null,null), null));
+//let root = new TreeNode(1,null,null);
+
+let inorderRec = (node) => {
+    if (node == null)
+    {
+        return;
+    }
+
+    let temp = node.right;
+
+    node.right = node.left;
+    node.left = temp;
+
+    inorderRec(node.left);
+
+    inorderRec(node.right);
+    return node;
+}
+
+
+var invertTree = function(root)
+{
+    if (root == null)
+    {
+        return [];
+    }
+   return inorderRec(root); 
+}
+
+console.log(invertTree(root));
