@@ -1601,7 +1601,7 @@ console.log(invertTree(root));*/
 //228. Summary Ranges
 
 
-nums = [0,1,2,4,6,7,8,98,99,101];
+/*nums = [0,1,2,4,6,7,8,98,99,101];
 //nums = [0,2,4,5,7];
 var summaryRanges = function(nums) 
 {
@@ -1625,4 +1625,23 @@ var summaryRanges = function(nums)
     return result;
 };
 
-console.log(summaryRanges(nums));
+console.log(summaryRanges(nums));*/
+
+//231. Power of Two
+
+let n = 2050;
+
+var isPowerOfTwo = function(n) 
+{
+    while(n > 1 && Number.isInteger(n))
+    {
+        n = n/2;
+    }
+    if (n == 1)
+    {
+        return true;
+    }
+    return false;
+};
+
+console.log(isPowerOfTwo(n));
