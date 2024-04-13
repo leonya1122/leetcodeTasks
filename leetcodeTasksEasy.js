@@ -1701,7 +1701,7 @@ console.log(q.empty())*/
 //234. Palindrome Linked List
 
 
-function ListNode(val, next) 
+/*function ListNode(val, next) 
 {
     this.val = (val===undefined ? 0 : val)
     this.next = (next===undefined ? null : next)
@@ -1729,4 +1729,46 @@ var isPalindrome = function(head)
     return true;
 };
 
-console.log(isPalindrome(list1));
+console.log(isPalindrome(list1));*/
+
+//242. Valid Anagram
+
+let s = "qqwewrty",t = "ytrcqewq";
+
+/*var isAnagram = function(s, t) 
+{
+    if(s.length != t.length) return false;
+
+    for(let i = 0;i<s.length;i++)
+    {
+        t = t.replace(`${s[i]}`, '');
+    }   
+
+    if (t == '')
+    {
+        return true;
+    }
+    return false;
+}*/
+
+var isAnagram = function(s, t) 
+{
+
+    if(s.length != t.length) return false;
+    let objS = {}, objT = {};
+
+    for(let i = 0;i<s.length;i++)
+    {
+        objS[s[i]] = (objS[s[i]] || 0) +1;
+        objT[t[i]] = (objT[t[i]] || 0) +1;
+    }
+
+    for(key in objS)
+    {
+        if(objS[key] != objT[key]) return false; 
+    }
+    return true;
+
+}
+
+console.log(isAnagram(s,t));
