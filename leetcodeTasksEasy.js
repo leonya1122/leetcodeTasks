@@ -1629,7 +1629,7 @@ console.log(summaryRanges(nums));*/
 
 //231. Power of Two
 
-let n = 2050;
+/*let n = 2050;
 
 var isPowerOfTwo = function(n) 
 {
@@ -1644,4 +1644,89 @@ var isPowerOfTwo = function(n)
     return false;
 };
 
-console.log(isPowerOfTwo(n));
+console.log(isPowerOfTwo(n));*/
+
+//232. Implement Queue using Stacks
+
+/*class MyQueue
+{
+
+    constructor()
+    {
+        this.num = new Array;
+        this.index = -1;
+    }
+
+    push(value)
+    {
+        this.index ++;
+        this.num[this.index] = value;
+    }
+
+    pop()
+    {
+        let temp = this.num[0];
+        this.num.shift();
+        this.index --;
+        return temp;
+    }
+
+    peek()
+    {
+        return this.num[0];
+    }
+
+    empty()
+    {
+        if (this.index < 0)
+        {
+            return true;
+        }
+        return false;
+    }
+}
+
+let q = new MyQueue();
+
+q.push(12);
+q.push(15);
+
+console.log(q.pop());
+
+console.log(q.peek());
+
+console.log(q.empty())*/
+
+
+//234. Palindrome Linked List
+
+
+function ListNode(val, next) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+}
+
+list1 = new ListNode(1,new ListNode(2,new ListNode(2,new ListNode(1,))));
+
+var isPalindrome = function(head) 
+{
+    let ar = [];
+    
+    while (head) 
+    {
+        ar.push(head.val);
+        head = head.next;
+    }
+
+    for(let i=0,j = ar.length-1; i<j; i++,j--)
+    {
+        if(ar[i]!=ar[j])
+        {
+            return false;
+        }
+    }
+    return true;
+};
+
+console.log(isPalindrome(list1));
