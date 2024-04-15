@@ -1733,9 +1733,9 @@ console.log(isPalindrome(list1));*/
 
 //242. Valid Anagram
 
-let s = "qqwewrty",t = "ytrcqewq";
+/*let s = "qqwewrty",t = "ytrcqewq";
 
-/*var isAnagram = function(s, t) 
+var isAnagram = function(s, t) 
 {
     if(s.length != t.length) return false;
 
@@ -1749,7 +1749,7 @@ let s = "qqwewrty",t = "ytrcqewq";
         return true;
     }
     return false;
-}*/
+}
 
 var isAnagram = function(s, t) 
 {
@@ -1771,4 +1771,63 @@ var isAnagram = function(s, t)
 
 }
 
-console.log(isAnagram(s,t));
+console.log(isAnagram(s,t));*/
+
+
+//257. Binary Tree Paths
+
+function TreeNode(val, left, right) 
+{
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+
+//let root = new TreeNode(1,new TreeNode(2, null, new TreeNode(5,null,null)), new TreeNode(3,null, null));
+let root = new TreeNode(1,new TreeNode(2, null, null), new TreeNode(3,null,null))
+
+let order = (node, result, flag) =>{
+    if (node == null)
+    {
+        return;
+    }
+    flag.val = 1;
+    result[result.length-1].push(node.val);
+
+    if(node.left == null && node.right == null)
+    {
+        result.push([...result[result.length-1]])
+        flag.val = 0;
+    }
+
+    order(node.left, result, flag);
+    order(node.right, result, flag);
+    if (!flag.val)
+    {
+        result[result.length-1].pop()
+    }
+}
+
+
+var binaryTreePaths = function(root) 
+{
+    if (root == null)
+    {
+        return [""];
+    }
+
+
+    let resultArray = [[]];
+    let flag = {
+        val: 0
+    };  // флаг подъёма вверх по дереву
+    order(root, resultArray, flag);
+    resultArray.pop()
+    
+    resultArray = resultArray.map(element => 
+        element.join('->')
+    );
+    return resultArray;
+};
+
+console.log(binaryTreePaths(root));
