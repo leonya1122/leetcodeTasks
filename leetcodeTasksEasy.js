@@ -1834,7 +1834,7 @@ console.log(binaryTreePaths(root));*/
 
 //258. Add Digits
 
-let num = 93;
+/*let num = 93;
 
 var addDigits = function(num) 
 {
@@ -1854,4 +1854,43 @@ var addDigits = function(num)
 
 }
 
-console.log(addDigits(num));
+console.log(addDigits(num));*/
+
+//263. Ugly Number
+
+let n = 18;
+
+var isUgly = function(n) {
+    if(!n)
+    {
+        return false;
+    }
+    let flag = 1;
+    while (flag)
+    {
+        if(n % 2 === 0)
+        {
+            n/=2;
+        }
+        else if(n % 3 === 0)
+        {
+            n/=3;
+        }
+        else if(n % 5 === 0)
+        {
+            n/=5;
+        }
+        else 
+        {
+            flag = 0;
+        }
+    }
+    if (n === 1)
+    {
+        return true;
+    }
+    return false
+
+};
+
+console.log(isUgly(n));
