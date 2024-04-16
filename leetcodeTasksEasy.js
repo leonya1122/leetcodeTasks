@@ -1858,7 +1858,7 @@ console.log(addDigits(num));*/
 
 //263. Ugly Number
 
-let n = 18;
+/*let n = 18;
 
 var isUgly = function(n) {
     if(!n)
@@ -1893,4 +1893,29 @@ var isUgly = function(n) {
 
 };
 
-console.log(isUgly(n));
+console.log(isUgly(n));*/
+
+//268. Missing Number
+
+let nums = [1,0]
+
+var missingNumber = function(nums) 
+{
+    let arr = new Array(nums.length+1);
+    nums.forEach(element => {
+        arr[element] = 1;
+    });
+    
+    let result = 0;
+
+     arr.find((element, index) => {
+        if(element != 1)
+        {
+            result = index;
+            return true;
+        }
+    })
+    return result;
+};
+
+console.log(missingNumber(nums));
