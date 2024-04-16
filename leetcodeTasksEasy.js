@@ -1776,7 +1776,7 @@ console.log(isAnagram(s,t));*/
 
 //257. Binary Tree Paths
 
-function TreeNode(val, left, right) 
+/*function TreeNode(val, left, right) 
 {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
@@ -1830,4 +1830,28 @@ var binaryTreePaths = function(root)
     return resultArray;
 };
 
-console.log(binaryTreePaths(root));
+console.log(binaryTreePaths(root));*/
+
+//258. Add Digits
+
+let num = 93;
+
+var addDigits = function(num) 
+{
+    
+         let arr = [...num.toString()].map(Number);
+         let result = 0;
+
+         arr.forEach(element => {
+            result += element;
+         });
+         if (result>=10)
+         {
+             result = addDigits(result)
+         }
+         
+        return result;
+
+}
+
+console.log(addDigits(num));
