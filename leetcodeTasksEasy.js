@@ -1897,7 +1897,7 @@ console.log(isUgly(n));*/
 
 //268. Missing Number
 
-let nums = [1,0]
+/*let nums = [1,0]
 
 var missingNumber = function(nums) 
 {
@@ -1918,4 +1918,5 @@ var missingNumber = function(nums)
     return result;
 };
 
-console.log(missingNumber(nums));
+console.log(missingNumber(nums));*/
+
