@@ -51,7 +51,7 @@ console.log(addTwoNumbers(l1,l2));*/
 
 //3. Longest Substring Without Repeating Characters
 
-let s = "tmmzuxt";
+/*let s = "tmmzuxt";
 
 var lengthOfLongestSubstring = function(s) {
     
@@ -88,4 +88,73 @@ var lengthOfLongestSubstring = function(s) {
 
 };
 
-console.log(lengthOfLongestSubstring(s));
+console.log(lengthOfLongestSubstring(s));*/
+
+//5. Longest Palindromic Substring
+
+let s = "saaas";
+
+var longestPalindrome = function(s) {
+    
+    if (!s.length)
+    {
+        return 0;
+    }
+    let resultMax = s[0];
+    let resultS = "";
+
+
+
+    for (let i = 0; i<s.length-1;i++)
+    {
+        let centr = 1, //1, если у палиндрома есть центр их 1 симовла
+        c = 1,         //Значение, на которое двигаемся влево\вправо
+        korL = 0,      //если у палиндрома в центре 2 или более символа, то корректируем движение влево на korL
+        flag = 1;      
+
+        while (true)
+        {
+
+            if (s[i] === s[i+1])
+            {
+                if(flag)
+                {
+                    resultS = resultS + s[i] + s[i+1];
+                }
+                else{
+                    resultS = resultS + s[i+1];
+                }
+                i++;
+                korL++;
+                flag = 0;
+                centr = 0;
+            }
+            else if ((s[i - c - korL] === s[i + c ]) && (s[i + c] != undefined))
+            {
+                if(centr)
+                {
+                    resultS = s[i];
+                    centr = 0;
+                }
+                resultS = s[i-c-korL] + resultS + s[i+c];
+                c++;
+            }
+            else
+            {
+                korR = 0;
+                flag = 0;
+                centr = 1;
+                break;
+            }
+        }
+
+        if (resultS.length > resultMax.length)
+        {
+            resultMax = resultS;
+        }
+        resultS = "";
+    }
+    return resultMax;
+};
+
+console.log(longestPalindrome(s));
