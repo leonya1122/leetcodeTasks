@@ -92,7 +92,7 @@ console.log(lengthOfLongestSubstring(s));*/
 
 //5. Longest Palindromic Substring
 
-let s = "saaas";
+/*let s = "saaas";
 
 var longestPalindrome = function(s) {
     
@@ -157,4 +157,48 @@ var longestPalindrome = function(s) {
     return resultMax;
 };
 
-console.log(longestPalindrome(s));
+console.log(longestPalindrome(s));*/
+
+//6. Zigzag Conversion
+
+let s = "PAYPALISHIRING";
+let numRows = 3;
+
+var convert = function(s, numRows) {
+    if(numRows == 1 || s.length<numRows)
+    {
+        return s;
+    }
+    let x = 2*numRows - 2;  //шаг для 1 и последней строки и сумма шагов для остальных строк
+    let resultS = "";       //строка результата
+    let prev = 0;           //предыдущее значение индекса
+    let index;              //функция, возвращает прирост индекса
+
+
+    for(let r = 0; r<numRows; r++)      //r - номер строки
+    {
+        resultS += s[r];
+        prev = r;     
+
+        if (r == 0 || r == numRows-1)   //если первая или последняя строка
+        {
+            index = () => x;
+        }
+        else{
+            index = (i) => Math.abs(((i%2)*x)-(r*2)); ////для четных значений - прирост = r*2, для нечетных x - r*2
+        }
+
+        for(let i = 1;; i++)
+        {
+            prev += index(i);
+            if(prev>=s.length)
+            {
+                break;
+            }
+            resultS += s[prev];  
+        }
+    }
+    return resultS;
+};
+
+console.log(convert(s,numRows));
