@@ -4,7 +4,7 @@ let nums1 = [1,3,5,6], nums2 = [2,4,7];
 
 var findMedianSortedArrays = function(nums1, nums2) {
     
-    let isMedOne = true;
+    let isMedOne = true;                                        
     let medianN = Math.floor((nums1.length + nums2.length)/2);
 
     if((nums1.length + nums2.length)%2 == 0)
