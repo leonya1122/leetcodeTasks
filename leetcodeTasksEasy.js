@@ -1923,7 +1923,7 @@ console.log(missingNumber(nums));*/
 
 //2704. To Be Or Not To Be
 
-var expect = function(val1) {
+/*var expect = function(val1) {
     return {
         toBe: (val2) => {
             if(val1 === val2) 
@@ -1940,4 +1940,18 @@ var expect = function(val1) {
     }
 };
 
-console.log(expect(5).toBe(2));
+console.log(expect(5).toBe(2));*/
+
+//2665. Counter II
+
+var createCounter = function(init) {
+    let counter = init;
+    return {
+        increment : () => ++counter,
+        decrement : () => --counter,
+        reset     : () =>{counter = init; return counter;}
+    } 
+};
+
+let x = createCounter(5);
+console.log(x.increment(), x.decrement(), x.reset());
