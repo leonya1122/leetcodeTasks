@@ -1944,7 +1944,7 @@ console.log(expect(5).toBe(2));*/
 
 //2665. Counter II
 
-var createCounter = function(init) {
+/*var createCounter = function(init) {
     let counter = init;
     return {
         increment : () => ++counter,
@@ -1954,4 +1954,21 @@ var createCounter = function(init) {
 };
 
 let x = createCounter(5);
-console.log(x.increment(), x.decrement(), x.reset());
+console.log(x.increment(), x.decrement(), x.reset());*/
+
+//2635. Apply Transform Over Each Element in Array
+
+
+/*let arr = [1,2,3]
+let fn = i => i+1;
+var map = function(arr, fn) {
+
+    for (let j = 0; j<arr.length; j++)
+    {
+        arr[j] = fn(arr[j])
+    }
+    return arr;
+};
+
+console.log(map(arr,fn));*/
+
