@@ -2001,3 +2001,20 @@ var filter = function(arr, fn) {
 
 console.log(filter(arr,fn));*/
 
+
+//2626. Array Reduce Transformation
+
+var reduce = function(nums, fn, init) {
+
+    if(nums.length<=0)
+    {
+        return init;
+    }
+
+    let val = init;
+    for (let j = 0; j<arr.length; j++)
+    {
+        val = fn(val,nums[i])
+    }
+    return val;
+};
