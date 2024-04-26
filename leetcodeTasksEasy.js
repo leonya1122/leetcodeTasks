@@ -2004,7 +2004,7 @@ console.log(filter(arr,fn));*/
 
 //2626. Array Reduce Transformation
 
-var reduce = function(nums, fn, init) {
+/*var reduce = function(nums, fn, init) {
 
     if(nums.length<=0)
     {
@@ -2017,4 +2017,19 @@ var reduce = function(nums, fn, init) {
         val = fn(val,nums[i])
     }
     return val;
+};*/
+
+
+//2629. Function Composition
+
+var compose = function(functions) {
+    
+    return function(x) {
+        for(let i = functions.length-1;i>=0;i--)
+        {
+            x = functions[i](x);
+        }
+        return x
+    }
 };
+
