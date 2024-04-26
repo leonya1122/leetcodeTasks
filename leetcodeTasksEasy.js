@@ -1965,10 +1965,39 @@ var map = function(arr, fn) {
 
     for (let j = 0; j<arr.length; j++)
     {
-        arr[j] = fn(arr[j])
+        arr[j] = fn(arr[j],i)
     }
     return arr;
 };
 
 console.log(map(arr,fn));*/
+
+//2634. Filter Elements from Array
+
+/*let arr = [1,2,4,3]
+let fn = (elem,i) => {
+    if (elem == i)
+    {
+        return true;
+    }
+    else 
+    {
+        return false;
+    }
+}
+
+var filter = function(arr, fn) {
+
+    let resultArray = [];
+    for (let j = 0; j<arr.length; j++)
+    {
+        if(fn(arr[j],j))
+        {
+            resultArray.push(arr[j]);
+        }
+    }
+    return resultArray;
+};
+
+console.log(filter(arr,fn));*/
 
